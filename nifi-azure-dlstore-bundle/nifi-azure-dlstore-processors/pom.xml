@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>azure.dlstore</artifactId>
+        <groupId>nifi</groupId>
+        <version>1.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>nifi-azure-dlstore-processors</artifactId>
+	
+	<repositories>
+        <repository>
+            <id>adx-snapshots</id>
+            <name>Azure ADX Snapshots</name>
+            <url>http://adxsnapshots.azurewebsites.net/</url>
+            <layout>default</layout>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>oss-snapshots</id>
+            <name>Open Source Snapshots</name>
+            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+            <layout>default</layout>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <dependencies>
+		<dependency>
+            <groupId>com.microsoft.azure</groupId>
+            <artifactId>azure-client-authentication</artifactId>
+            <!-- <version>1.0.0-SNAPSHOT</version>-->
+            <version>1.0.0-beta2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.microsoft.azure</groupId>
+            <artifactId>azure-mgmt-datalake-store</artifactId>
+            <!-- <version>1.0.0-SNAPSHOT</version>-->
+            <version>1.0.0-beta1.2</version>
+        </dependency>
+		<dependency>
+		   <groupId>org.slf4j</groupId>
+		   <artifactId>slf4j-api</artifactId>
+		   <version>1.7.5</version>
+	   </dependency>
+	   <dependency>
+		   <groupId>org.slf4j</groupId>
+		   <artifactId>slf4j-log4j12</artifactId>
+		   <version>1.7.5</version>
+	   </dependency>
+        <dependency>
+            <groupId>org.apache.nifi</groupId>
+            <artifactId>nifi-processor-utils</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-io</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.jayway.jsonpath</groupId>
+            <artifactId>json-path</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.nifi</groupId>
+            <artifactId>nifi-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.nifi</groupId>
+            <artifactId>nifi-mock</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>nifi</groupId>
+            <artifactId>nifi-azure-dlstore-controller-service-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
+</project>
